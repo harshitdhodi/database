@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000/news/bolg-1</loc>
+    <lastmod>11/07/2024 15:30:54</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/newscategories/category-1</loc>
+    <lastmod>11/07/2024 15:30:54</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/newssubcategories/subcategory-1</loc>
+    <lastmod>11/07/2024 15:30:54</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/newssubcategories/subsubcategory-1</loc>
+    <lastmod>11/07/2024 15:30:54</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1</priority>
+  </url>
+</urlset>

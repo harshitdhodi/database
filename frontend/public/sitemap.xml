@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000/sitemap-main.xml</loc>
+    <lastmod>11/07/2024 15:31:07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/sitemap-product.xml</loc>
+    <lastmod>11/07/2024 15:31:07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/sitemap-service.xml</loc>
+    <lastmod>11/07/2024 15:31:07</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:3000/sitemap-news.xml</loc>
+    <lastmod>11/07/2024 15:31:07</lastmod>
+  </url>
+</urlset>
