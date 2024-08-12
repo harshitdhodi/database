@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { 
+const {
   getState,
   createState,
   getStatesByCountryCode, // Updated function name
@@ -28,4 +28,3 @@ router.put("/updateState", updateState);
 router.get("/getStateById", getStateById);
 
 module.exports = router;
- 
