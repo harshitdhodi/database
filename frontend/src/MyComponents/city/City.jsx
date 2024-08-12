@@ -60,7 +60,7 @@ const CityList = () => {
       <div className="flex flex-wrap justify-between items-center mb-4">
         <h1 className="text-xl font-bold mb-3 ml-2">City List</h1>
         <button className="px-4 py-2 mt-3 bg-[#1F2937] text-white rounded hover:bg-red-500 transition duration-300">
-          <Link to="/createCity">Add New City</Link>
+          <Link to="/add-city">Add New City</Link>
         </button>
       </div>
 
@@ -69,7 +69,7 @@ const CityList = () => {
           <tr className="bg-[#1F2937] text-white text-left uppercase font-serif text-[14px]">
             <th className="py-2 px-6">ID</th>
             <th className="py-2 px-6">City Name</th>
-            <th className="py-2 px-6">State Code</th>
+            <th className="py-2 px-6">State Name</th>
             <th className="py-2 px-6">Country Code</th>
             <th className="py-2 px-6">Actions</th>
           </tr>
@@ -82,12 +82,12 @@ const CityList = () => {
             >
               <td className="py-2 px-6">{city.id}</td>
               <td className="py-2 px-6">{city.name}</td>
-              <td className="py-2 px-6">{city.stateCode}</td>
+              <td className="py-2 px-6">{city.stateName}</td>
               <td className="py-2 px-6">{city.countryCode}</td>
               <td className="py-2 px-4">
                 <div className="flex py-1 px-4 items-center space-x-2">
                   <button>
-                    <Link to={`/editcities/${city._id}`}>
+                    <Link to={`/city/${city._id}`}>
                       <FaEdit className="text-blue-500 text-lg" />
                     </Link>
                   </button>

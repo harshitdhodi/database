@@ -110,6 +110,8 @@ import CountryList from "./MyComponents/country/country";
 import UpdateCountryForm from "./MyComponents/country/updateCountry";
 import StateForm from "./MyComponents/State/StateForm";
 import UpdateForm from "./MyComponents/State/UpdateState";
+import CityForm from "./MyComponents/city/addCity";
+import CityUpdateForm from "./MyComponents/city/updateCity";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -133,12 +135,15 @@ function App() {
             <Route path="/verifyOTP" element={<VerifyOTP />} />
             <Route path="/forgetpassword" element={<ForgetPassword />} />
           </>
-        ) : (
+        ) : (  
           <Route path="/" element={<Sidebar />}>
             <Route index element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/services" element={<Services />} />
             <Route path="/city" element={<City />} />
+            <Route path="/add-city" element={<CityForm />} />
+            <Route path="/city/:id" element={<CityUpdateForm />} />
+            <Route path="/state/:id" element={<UpdateForm />} />
             <Route path="/state" element={<State />} />
             <Route path="/customer" element={<CustomerList />} />
             <Route path="/create-customer" element={<CreateCustomer />} />
@@ -149,7 +154,7 @@ function App() {
             <Route path="/country" element={<CountryList />} />
             <Route path="/update-country/:slug" element={<UpdateCountryForm />} />
             <Route path="/create-state" element={<StateForm />} />
-            <Route path="/state/:slug" element={<UpdateForm />} />
+            {/* <Route path="/state/:slug" element={<UpdateForm />} /> */}
            <Route
               path="/services/createServices"
               element={<CreateService />}

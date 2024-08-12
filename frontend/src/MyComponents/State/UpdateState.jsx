@@ -7,16 +7,16 @@ const UpdateForm = () => {
   const [isoCode, setIsoCode] = useState("");
   const [countryCode, setCountryCode] = useState("");
   const [countryName, setCountryName] = useState("");
-  const { slug } = useParams(); // To get the slug from the URL
+  const { id } = useParams(); // To get the id from the URL
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchData(slug);
-  }, [slug]);
+    fetchData(id);
+  }, [id]);
 
-  const fetchData = async (slug) => {
+  const fetchData = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3006/api/state/getStateBySlug/${slug}`);
+      const response = await axios.get(`http://localhost:3006/api/state/getStateById?id=${id}`);
       const { name, isoCode, countryCode, countryName } = response.data.data;
       setName(name);
       setIsoCode(isoCode);
@@ -38,7 +38,7 @@ const UpdateForm = () => {
     };
 
     try {
-      await axios.put(`http://localhost:3006/api/state/updateState/${slug}`, data);
+      await axios.put(`http://localhost:3006/api/state/updateState?id=${id}`, data);
       navigate("/state"); // Redirect to the list page after submission
     } catch (error) {
       console.error("There was an error updating the data!", error);
@@ -46,7 +46,7 @@ const UpdateForm = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-lg max-w-md mx-auto mt-10">
+    <div className="p-6 bg-white w-full mx-auto mt-10">
       <h1 className="text-2xl font-bold mb-4">Update Data</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

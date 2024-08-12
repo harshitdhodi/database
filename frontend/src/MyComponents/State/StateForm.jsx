@@ -28,7 +28,7 @@ const StateForm = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-lg max-w-md mx-auto mt-10">
+    <div className="p-6 bg-white w-full mx-auto mt-10">
       <h1 className="text-2xl font-bold mb-4">Add New State</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -40,7 +40,7 @@ const StateForm = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded"
             required
           />
-        </div>
+        </div> 
         <div className="mb-4">
           <label className="block text-gray-700">ISO Code</label>
           <input

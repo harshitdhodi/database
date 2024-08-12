@@ -46,9 +46,9 @@ const StateList = () => {
     }
   };
 
-  const handleDelete = async (slug) => {
+  const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3006/api/state/deleteState/${slug}`);
+      await axios.delete(`http://localhost:3006/api/state/deleteState?id=${id}`);
       fetchCities();
     } catch (error) {
       console.error("There was an error deleting the state!", error);
@@ -87,11 +87,11 @@ const StateList = () => {
               <td className="py-2 px-4">
                 <div className="flex py-1 px-4 items-center space-x-2">
                   <button>
-                    <Link to={`/state/${city.slug}`}>
+                    <Link to={`/state/${city._id}`}>
                       <FaEdit className="text-blue-500 text-lg" />
                     </Link>
                   </button>
-                  <button onClick={() => handleDelete(city.slug)}>
+                  <button onClick={() => handleDelete(city._id)}>
                     <FaTrashAlt className="text-red-500 text-lg" />
                   </button>
                 </div>

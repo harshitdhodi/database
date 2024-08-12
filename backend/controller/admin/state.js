@@ -65,6 +65,7 @@ const getState =async (req, res) => {
 
 const updateState = async (req, res) => {
   try {
+    const {id} 
     const updatedState = await State.findOneAndUpdate({ slug: req.params.slug }, req.body, { new: true });
     if (!updatedState) return res.status(404).json({ message: "State not found" });
     res.status(200).json({ message: "State updated successfully", data: updatedState });
@@ -73,9 +74,10 @@ const updateState = async (req, res) => {
   }
 };
 
-const getStatebySlug = getStateBySlug = async (req, res) => {
+const getStatebySlug  = async (req, res) => {
   try {
-    const state = await State.findOne({ slug: req.params.slug });
+    const {id} = req.query;
+    const state = await State.findById(id);
     if (!state) return res.status(404).json({ message: "State not found" });
     res.status(200).json({ data: state });
   } catch (error) {

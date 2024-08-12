@@ -33,6 +33,39 @@ const getCity =async (req, res) => {
     }
   } 
 
-  
 
-  module.exports = {createCity , getCity}
+ const getCityBySlug = async (req, res) => {
+    try {
+      const {id} = req.query;
+      const city = await City.findById(id);
+      if (!city) return res.status(404).json({ message: "City not found" });
+      res.status(200).json({ data: city });
+    } catch (error) {
+      res.status(400).json({ message: "Error fetching city", error });
+    }
+  };
+
+  
+ const updateCity = async (req, res) => {
+    try {
+      const {id} = req.query;
+      const updatedCity = await City.findByIdAndUpdate(id , req.body, { new: true });
+      if (!updatedCity) return res.status(404).json({ message: "City not found" });
+      res.status(200).json({ message: "City updated successfully", data: updatedCity });
+    } catch (error) {
+      res.status(400).json({ message: "Error updating city", error });
+    }
+  };
+    
+
+  const deleteCity = async (req, res) => {
+    try {
+      const {id} = req.query
+      const deletedCity = await City.findByIdAndDelete(id);
+      if (!deletedCity) return res.status(404).json({ message: "City not found" });
+      res.status(200).json({ message: "City deleted successfully" });
+    } catch (error) {
+      res.status(400).json({ message: "Error deleting city", error });
+    }
+  };
+  module.exports = {createCity ,getCityBySlug,deleteCity,updateCity, getCity} 
